@@ -1,16 +1,27 @@
-# React + Vite
+# 👑 Midnight Finance - Dashboard UI
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interface eksklusif untuk **Midnight Finance**. Fokus pada pengalaman pengguna yang mewah (*Sultan Experience*) dengan visualisasi data yang interaktif menggunakan **Recharts**.
 
-Currently, two official plugins are available:
+### ✨ Highlights
+* **Modern Dashboard:** Tampilan gelap (Dark Mode) yang elegan.
+* **Wealth Analytics:** Grafik Arus Kas dan Alokasi Aset yang interaktif.
+* **Responsive UI:** Navigasi slim yang optimal untuk layar desktop maupun mobile.
+* **Real-time Interaction:** Integrasi mulus dengan REST API Laravel.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🎨 Tech Stack
+* **Framework:** React.js (Vite)
+* **Styling:** Tailwind CSS & Lucide Icons
+* **Charts:** Recharts
+* **State Management:** React Hooks (useCallback, useEffect)
 
-## React Compiler
+### 🚀 Menjalankan Project
+1. Clone repo ini.
+2. Jalankan `npm install`.
+3. Sesuaikan `VITE_API_BASE_URL` di file `.env`.
+4. Jalankan `npm run dev`.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+Part of the **Midnight Finance Ecosystem** by **[Dzayong](https://github.com/Dzayong)**
