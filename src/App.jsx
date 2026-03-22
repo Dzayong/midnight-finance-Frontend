@@ -11,15 +11,21 @@ import Dashboard from './components/Dashboard';
 import Setup from './components/Setup';
 import FinancialAccounts from './components/FinancialAccounts';
 import Transactions from './components/Transactions';
-import Analytics from './components/Analytics'; // Pastikan file ini sudah dibuat
+import Analytics from './components/Analytics';
 import Settings from './components/Settings';
+import ResetPassword from './components/ResetPassword'; // 👈 Tambahan komponen Reset Password
 
-// Satpam Global (Axios Interceptor)
+// 🛡️ Satpam Global (Axios Interceptor) yang Lebih Pintar
 axios.interceptors.response.use(
     (response) => response,
     (error) => {
-        if (error.response && error.response.status === 401) {
-            localStorage.clear();
+        // Cek apakah error ini berasal dari proses nge-hit API '/login'
+        const isLoginRequest = error.config && error.config.url && error.config.url.includes('/login');
+
+        // Kalau token mati (401) DAN BUKAN lagi nyoba login, baru tendang keluar
+        if (error.response && error.response.status === 401 && !isLoginRequest) {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
             window.location.href = '/login';
         }
         return Promise.reject(error);
@@ -45,11 +51,12 @@ function App() {
     return (
         <Router>
             <Routes>
-                {/* Jalur Publik */}
+                {/* 🔓 Jalur Publik */}
                 <Route path="/login" element={<Auth />} />
                 <Route path="/register" element={<Auth />} />
+                <Route path="/reset-password" element={<ResetPassword />} /> {/* 👈 Rute Publik Baru */}
 
-                {/* Jalur Privat */}
+                {/* 🔐 Jalur Privat */}
                 <Route element={<PrivateRoute />}>
                     <Route path="/setup" element={<Setup />} />
                     
